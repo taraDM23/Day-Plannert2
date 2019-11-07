@@ -4,16 +4,16 @@ var Savebtn = document.getElementById("save");
 var weather = document.getElementById("weather");
 
 // change colour based on time
-var hour = new Date().getHours();
+/* var hour = new Date().getHours();
 
 if (hour > 14 || hour !== hour) {
-    document.getElementById("AddText").style.backgroundColor = "pink";
+    document.getElementById("AddText").style.class = "future";
 }
 if (hour == hour || hour == hour) {
-    document.getElementById("AddText").style.backgroundColor = "green";
+    document.getElementById("AddText").style.class = "present";
 }
 if (hour < 14 || hour !== hour)
-    document.getElementById("AddText").style.backgroundColor = "yellow";
+    document.getElementById("AddText").style.class = "past"; */
 
 
 //document.body.inputtype.style.backgroundColor 
@@ -21,22 +21,22 @@ if (hour < 14 || hour !== hour)
 
 // Add item to-do
 
-function myFunction() {
+function GetItem() {
     var x = JSON.parse(localStorage.getItem("mytask"));
     document.getElementById("td").innerText = x;
-    //console.log("mytask", x);
+    console.log("mytask");
 }
-for (i = 0; i < AddText.length; i++)
 
-    $("#save").on("click", function(event) {
-    event.preventDefault();
-    var x = document.getElementById("AddText").value;
-    localStorage.setItem("mytask", JSON.stringify(x))
-    console.log("mytask", x);
-    myFunction()
-
-});
-
+for (i = 1; i < 10; i++) {
+    var buttn = document.getElementById("save" + i)
+    $("save" + i).on("click", function(event) {
+        event.preventDefault();
+        var x = document.getElementById("AddText").value;
+        localStorage.setItem("mytask", JSON.stringify(x))
+        console.log("mytask");
+        myFunction()
+    });
+}
 // Melb temp section
 var APIKey = "166a433c57516f51dfab1f7edaed8413";
 var queryURL = "https://api.openweathermap.org/data/2.5/weather?" + "q=Melbourne,AU&units=imperial&appid=" + APIKey;

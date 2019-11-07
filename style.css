@@ -78,7 +78,7 @@ input.break {
     color: white;
 }
 
-#save {
+.button {
     width: 30%;
     border-left: 1px solid black;
     border-top-right-radius: 15px;
