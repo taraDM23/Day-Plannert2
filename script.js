@@ -4,8 +4,20 @@ var Savebtn = document.getElementById("save");
 var weather = document.getElementById("weather");
 
 // change colour based on time
+var hour = new Date().getHours();
+
+if (hour > 14 || hour !== hour) {
+    document.getElementById("AddText").style.backgroundColor = "pink";
+}
+if (hour == hour || hour == hour) {
+    document.getElementById("AddText").style.backgroundColor = "green";
+}
+if (hour < 14 || hour !== hour)
+    document.getElementById("AddText").style.backgroundColor = "yellow";
 
 
+//document.body.inputtype.style.backgroundColor 
+//document.body.className = "day";
 
 // Add item to-do
 
@@ -65,3 +77,6 @@ var dayNum = d.getDate();
 var year = d.getFullYear();
 var date = (dayName + ", " + month + " " + dayNum + "th " + year);
 document.getElementById("currentDay").innerHTML = date;
+
+// show time for testing
+document.getElementById("test").innerHTML = d;
