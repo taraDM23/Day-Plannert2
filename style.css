@@ -79,7 +79,7 @@ input.break {
 }
 
 .button {
-    width: 30%;
+    width: 100%;
     border-left: 1px solid black;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
