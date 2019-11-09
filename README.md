@@ -22,7 +22,7 @@ Additionally, twitter bootstrap and custom css were used to provide the user int
 
 #### Tests:
 
-##### Responsiveness and CSS per brower
+##### Responsiveness and CSS per browser
 * Chrome browser - base line requirements
 * Firefox browser
 ** Responsivness - pass
