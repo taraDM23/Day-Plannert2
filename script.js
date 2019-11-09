@@ -8,11 +8,12 @@ console.log(hour)
 
 if (hour < 17 && hour > 9) {
     // future
-    for (i = hour + 1; i <= 17; i++) {
+    for (i = 9 + 1; i <= 17; i++) {
+        // document.getElementsByClassName("userInput")[i]
         document.getElementById("AddText" + i).style.backgroundColor = "purple";
     }
     //past
-    for (i = 9; i < hour - 1; i++) {
+    for (i = 9; i < hour; i++) {
         document.getElementById("AddText" + i).style.backgroundColor = "pink";
         // $("h1, h2, p").addClass("blue")  
     }
@@ -27,7 +28,6 @@ function GetItem() {
     var StoredData = JSON.parse(localStorage.getItem("items"));
     if (StoredData !== null) {
         //SaveData = StoredData;
-        console.log(SaveData);
     } else console.log("Booya!")
     return StoredData;
 }
@@ -40,7 +40,7 @@ for (i = 9; i <= 17; i++) {
     SaveBtn.addEventListener("click", function SaveEvent() {
         StoredData = AddText.textContent;
         console.log(AddText.textContent)
-        console.log(SaveBtn)
+        console.log("clicked")
         localStorage.setItem("items", JSON.stringify(StoredData));
     }())
 }
