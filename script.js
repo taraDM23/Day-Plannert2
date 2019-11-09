@@ -89,7 +89,7 @@ function ReloadSavedData() {
     if (getItem.AddText16 !== null) {
         document.getElementById("AddText16").value = getItem.AddText16;
         console.log(getItem.AddText16)
-    }
+    } else(getItem.AddText16 == null)
 }
 
 
