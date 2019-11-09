@@ -16,7 +16,6 @@ if (hour < 17 && hour > 9) {
     //past
     for (i = 9; i < hour; i++) {
         document.getElementById("AddText" + i).classList.add("past");
-        // $("h1, h2, p").addClass("blue")  
     }
     //current
     document.getElementById("AddText" + hour).classList.add("present");
