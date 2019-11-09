@@ -39,8 +39,6 @@ th,
 td {
     border-collapse: collapse;
     height: 60px;
-    border: black 1px solid;
-    /* Visual only remeber to get rid of it at teh end*/
 }
 
 .hour {
