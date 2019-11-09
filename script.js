@@ -8,17 +8,16 @@ console.log(hour)
 
 if (hour < 17 && hour > 9) {
     // future
-    for (i = 9 + 1; i <= 17; i++) {
-        // document.getElementsByClassName("userInput")[i]
-        document.getElementById("AddText" + i).style.backgroundColor = "purple";
+    for (i = hour + 1; i <= 17; i++) {
+        document.getElementById("AddText" + i).classList.add("future");
     }
     //past
     for (i = 9; i < hour; i++) {
-        document.getElementById("AddText" + i).style.backgroundColor = "pink";
+        document.getElementById("AddText" + i).classList.add("past");
         // $("h1, h2, p").addClass("blue")  
     }
     //current
-    document.getElementById("AddText" + hour).style.backgroundColor = "yellow";
+    document.getElementById("AddText" + hour).classList.add("present");
 }
 
 //Local Storage get
@@ -35,16 +34,21 @@ function GetItem() {
 //Local Storage set
 
 for (i = 9; i <= 17; i++) {
-    var SaveBtn = document.getElementById("save" + i);
-    var AddText = document.getElementById("AddText" + i);
+    let SaveBtn = document.getElementById("save" + i);
+    let AddText = document.getElementById("AddText" + i);
+
     SaveBtn.addEventListener("click", function SaveEvent() {
-        StoredData = AddText.textContent;
-        console.log(AddText.textContent)
+        console.log(this);
+        // Loop through all of the input (for loop)
+        // create an object 
+        // { 9:'' ,10: '', 11: ''}
+        // save ito localstorage
+        StoredData = AddText.value;
+        console.log(AddText.value)
         console.log("clicked")
         localStorage.setItem("items", JSON.stringify(StoredData));
-    }())
+    });
 }
-
 
 
 // Melb temp section
@@ -89,4 +93,4 @@ var date = (dayName + ", " + month + " " + dayNum + "th " + year);
 document.getElementById("currentDay").innerHTML = date;
 
 // show time for testing
-//document.getElementById("test").innerHTML = d;
+//document.getElementById("test").innerHTML = d
