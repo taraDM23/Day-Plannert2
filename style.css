@@ -35,10 +35,17 @@ textarea {
 }
 
 table,
-th,
 td {
     border-collapse: collapse;
     height: 60px;
+    border: white 1px solid;
+}
+
+th {
+    border-collapse: collapse;
+    height: 60px;
+    border: black 1px solid;
+    border-left: transparent 1px solid;
 }
 
 .hour {
@@ -57,17 +64,17 @@ input {
 
 .past {
     background-color: #d3d3d3;
-    color: white;
+    color: black;
 }
 
 .present {
     background-color: #ff6961;
-    color: white;
+    color: black;
 }
 
 .future {
     background-color: #77dd77;
-    color: white;
+    color: black;
 }
 
 .button {
