@@ -6,6 +6,8 @@ var weather = document.getElementById("weather");
 var hour = new Date().getHours();
 console.log(hour)
 
+ReloadSavedData();
+
 if (hour < 17 && hour > 9) {
     // future
     for (i = hour + 1; i <= 17; i++) {
@@ -20,18 +22,9 @@ if (hour < 17 && hour > 9) {
     document.getElementById("AddText" + hour).classList.add("present");
 }
 
-//Local Storage get
+//on click 
 
-//var SaveData = []
-function GetItem() {
-    var StoredData = JSON.parse(localStorage.getItem("items"));
-    if (StoredData !== null) {
-        //SaveData = StoredData;
-    } else console.log("Booya!")
-    return StoredData;
-}
-
-//Local Storage set
+var values = {};
 
 for (i = 9; i <= 17; i++) {
     let SaveBtn = document.getElementById("save" + i);
@@ -39,15 +32,64 @@ for (i = 9; i <= 17; i++) {
 
     SaveBtn.addEventListener("click", function SaveEvent() {
         console.log(this);
-        // Loop through all of the input (for loop)
-        // create an object 
-        // { 9:'' ,10: '', 11: ''}
-        // save ito localstorage
+
+        // save it to local Storage
+
+        values[AddText.id] = AddText.value;
+        console.log(AddText.id);
+
         StoredData = AddText.value;
         console.log(AddText.value)
         console.log("clicked")
-        localStorage.setItem("items", JSON.stringify(StoredData));
+        localStorage.setItem("items", JSON.stringify(values));
+
     });
+}
+
+//Local Storage get
+
+//var SaveData = []
+function ReloadSavedData() {
+    console.log("test")
+    var getItem = JSON.parse(localStorage.getItem("items"));
+    console.log(getItem);
+    console.log(getItem.AddText9);
+    if (getItem.AddText9 !== null) {
+        document.getElementById("AddText9").value = getItem.AddText9;
+        console.log(getItem.AddText9)
+    }
+    if (getItem.AddText10 !== null) {
+        document.getElementById("AddText10").value = getItem.AddText10;
+        console.log(getItem.AddText10)
+    }
+    if (getItem.AddText11 !== null) {
+        document.getElementById("AddText11").value = getItem.AddText11;
+        console.log(getItem.AddText11)
+    }
+    if (getItem.AddText12 !== null) {
+        document.getElementById("AddText12").value = getItem.AddText12;
+        console.log(getItem.AddText12)
+    }
+    if (getItem.AddText13 !== null) {
+        document.getElementById("AddText13").value = getItem.AddText13;
+        console.log(getItem.AddText13)
+    }
+    if (getItem.AddText14 !== null) {
+        document.getElementById("AddText14").value = getItem.AddText14;
+        console.log(getItem.AddText14)
+    }
+    if (getItem.AddText15 !== null) {
+        document.getElementById("AddText15").value = getItem.AddText15;
+        console.log(getItem.AddText15)
+    }
+    if (getItem.AddText17 !== null) {
+        document.getElementById("AddText17").value = getItem.AddText17;
+        console.log(getItem.AddText17)
+    }
+    if (getItem.AddText16 !== null) {
+        document.getElementById("AddText16").value = getItem.AddText16;
+        console.log(getItem.AddText16)
+    }
 }
 
 
