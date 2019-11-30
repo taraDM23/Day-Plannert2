@@ -6,9 +6,7 @@ var weather = document.getElementById("weather");
 var hour = new Date().getHours();
 console.log(hour)
 
-ReloadSavedData();
-
-if (hour < 17 && hour > 9) {
+if (hour <= 17 && hour >= 9) {
     // future
     for (i = hour + 1; i <= 17; i++) {
         document.getElementById("AddText" + i).classList.add("future");
@@ -20,6 +18,10 @@ if (hour < 17 && hour > 9) {
     //current
     document.getElementById("AddText" + hour).classList.add("present");
 }
+
+ReloadSavedData();
+
+
 
 //on click 
 
